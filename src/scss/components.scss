@@ -1,0 +1,143 @@
+@import "variables";
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin reset-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin nav-wrapper($height) {
+  width: 100%;
+  height: $height;
+  margin-top: $height;
+  z-index: 3;
+  @include reset-absolute;
+  @include flex-row;
+  justify-content: space-between;
+}
+
+@mixin nav_link($spacing) {
+  margin: 0 $spacing;
+}
+
+@mixin link {
+  display: inline-block;
+  font-size: $font-xs;
+  color: $light-fade;
+  text-decoration: none;
+  padding: .5rem $mg-16;
+  position: relative;
+  transition: .4s ease-in-out color;
+  &--active {
+    color: $light-main;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    border-radius: 1rem;
+    bottom: -.5rem;
+    left: 55%;
+    transform: translateX(-(.5rem));
+    border: 1px solid $light-main;
+    transition: .4s ease-in-out border, .4s ease-in-out background-color;
+  }
+  &--active::before {
+    border: 1px solid $color-orange;
+    background-color: $color-orange;
+  }
+  &:hover {
+    color: $dark-main;
+  }
+  &:hover::before {
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
+  }
+}
+
+@mixin button($width, $height, $font-size, $bg-color) {
+  width: $width;
+  height: $height;
+  color: $dark-main;
+  font-size: $font-size;
+  border-radius: $rounded-32;
+  border: 1px solid $light-main;
+  background-color: $bg-color;
+  transition: .5s ease-in-out border, .5s ease-in-out background-color;
+  a {
+    width: 100%;
+    height: 100%;
+    @include flex-row;
+    text-decoration: none;
+    color: $light-main;
+    transition: .4s ease-in-out color;
+  }
+  &:hover {
+    border: 1px solid $color-orange;
+    a {
+      color: $color-orange;
+    }
+  }
+
+}
+
+@mixin title-bar($width,$height,$font-size,$bg-color, $color, $rounded) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  color: $color;
+  background-color: $bg-color;
+  border-radius: $rounded;
+}
+
+@mixin landing__header($font-size) {
+  font-size: $font-size;
+}
+
+@mixin arrow-svg($size) {
+  left: calc(50% - (#{$size}/2));
+  bottom: $size;
+  width: $size;
+  height: $size;
+  position: absolute;
+  z-index: 5;
+  &-circle {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    rect {
+      transition: .4s ease-in-out stroke;
+    }
+  }
+  &-down {
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-52.5%) translateY(-50%);
+    width: 70%;
+    height: 70%;
+    path {
+      transition: .4s ease-in-out fill;
+    }
+  }
+}

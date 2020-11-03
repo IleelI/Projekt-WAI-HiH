@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a84623f942.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <div class="landing__background">
+            <div class="background--shade"></div>
+        </div>
+        <div class="landing-wrapper">
+
+            <nav class="nav-wrapper">
+                <div class="name">
+                        <h3 class="nav__name"><span class="text--accent">Elert.</span>Bartosz</h3>
+                </div>
+                <ul class="nav__menu">
+                    <li class="nav__link"><a href="index.html" class="link">Home</a></li>
+                    <li class="nav__link"><a href="gallery.html" class="link">Zdjęcia</a></li>
+                    <li class="nav__link"><a href="planer.html" class="link link--active">Planer</a></li>
+                    <li class="nav__link"><a href="contact.html" class="link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="landing-page">
+                <div class="text__wrapper">
+                    <h1 class="landing__heading">
+                        <span class="text--accent">Przed wyruszeniem</span> w drogę należy...
+                        </h1>
+                    <h2 class="landing__subheading">
+                        Oczyścić głowę, przygotować plan oraz <span class="text--accent">czekać na nieznane.</span>
+                        </h2>
+                </div>
+                <div class="button-wrapper">
+                    <a class="btn btn--landing" href="#" >Zaplanuj Teraz</a>
+                </div>
+                <div class="arrow">
+                    <svg class="arrow-circle" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#D8DEE9"/>
+                    </svg>
+
+                    <svg class="arrow-down" width="" height="" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29395 18L16.2939 28H17.7079L27.7079 18L26.2939 16.586L17.9999 24.878V4H15.9999V24.88L7.70795 16.584L6.29395 18Z" fill="#D8DEE9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <main class="main__content-wrapper">
+            <div class="intro__content">
+                <div class="content__header-wrapper">
+                    <header class="content__header">
+                        <h4 class="content_heading">O Planowaniu</h4>
+                    </header>
+                </div>
+
+                <section class="intro__section-wrapper">
+                    <article class="content__post content__post--left">
+                        <div class="post__text-wrapper">
+                            <h3 class="post__heading post__heading--left">
+                                Można wybrać prostą ścieżkę...
+                            </h3>
+                            <h5 class="post__subheading">
+                                <span class="text--accent">Podróżowanie</span> bez wcześniejszego większego planu
+                                może jest łatwą i prostą metodą na nowe doświadczenia.
+                            </h5>
+                        </div>
+
+                        <div class="post__img-wrapper">
+                            <img class="post__img" src="./public/assets/images/planer-intro1.jpg" alt="Poznanie tego co nieznane, Img.">
+                        </div>
+                    </article>
+
+                    <article class="content__post content__post--right">
+                        <div class="post__text-wrapper">
+                            <h3 class="post__heading post__heading--right">
+                                Ale lepiej jest wybrać coś sprawdzonego
+                            </h3>
+                            <h5 class="post__subheading">
+                                Z planem możemy cieszyć się tym co chcemy doświadczyć,
+                                nie wiedząc również o tym co los przygotował dla Nas w zanadrzu...
+                            </h5>
+                        </div>
+
+                        <div class="post__img-wrapper">
+                            <img class="post__img" src="./public/assets/images/planer-intro2.jpg" alt="Poznanie tego co nieznane, Img.">
+                        </div>
+                    </article>
+
+                    <div class="arrow">
+                        <svg class="arrow-circle" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#D8DEE9"/>
+                        </svg>
+
+                        <svg class="arrow-down" width="" height="" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29395 18L16.2939 28H17.7079L27.7079 18L26.2939 16.586L17.9999 24.878V4H15.9999V24.88L7.70795 16.584L6.29395 18Z" fill="#D8DEE9"/>
+                        </svg>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="todo-wrapper">
+                <div class="todo__container">
+                    <div class="todo__app">
+                        <div class="todo__header">
+                            <h4 class="todo__heading">Zaplanuj Swoją Podróż</h4>
+                        </div>
+                        <div class="todo__input-container">
+                            <input class="todo__input" type="text" name="todo" placeholder="Dodaj i planuj!">
+                            <span class="add__todo"><i class="fa fa-plus fa-md"></i></span>
+                        </div>
+                        <ul class="todo__list">
+                            <li class="todo">
+                                <p class="todo__text">Zrobić Projekt</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">Wytrzymać na WAI</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">Dupsnąć Piwerka</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">Obejrzeć LS'a</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">Ogarnąć dupę</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">asdasdasd</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="todo">
+                                <p class="todo__text">asdasdasd</p>
+                                <div class="icons">
+                                    <i class="finish__todo fa fa-check fa-sm"></i>
+                                    <i class="remove__todo fa fa-trash fa-sm"></i>
+                                </div>
+                            </li>
+                            <li class="overflow-spacer">Koniec Planowania.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="todo__decoration1"></div>
+                <div class="todo__decoration2"></div>
+                <div class="todo__decoration3"></div>
+            </section>
+
+            <div class="form__transition"></div>
+
+            <section class="form-wrapper">
+                <div class="form__header">
+                    <h4 class="form__heading">Podróżnicza Ankieta</h4>
+                </div>
+                <form class="form" action="form.php" method="get">
+                    <div class="input--name">
+                        <label for="name"> Twoje Imię: <br>
+                            <input type="text" name="name" id="name" value="">
+                        </label>
+                    </div>
+                    <fieldset class="input--sex">
+                        <legend>Płeć</legend>
+                        <label for="female">
+                            <input type="radio" id="female" name="sex" value="female">Kobieta
+                        </label>
+                        <label for="male">
+                            <input type="radio" id="male" name="sex" value="male">Mężczyzna
+                        </label>
+                    </fieldset>
+                    <fieldset class="input--travel_count">
+                        <legend>Ile podróży masz za sobą?</legend>
+                        <label for="travel_0">
+                            <input type="checkbox" id="travel_0" name="travel_count" value="0">0
+                        </label>
+                        <label for="travel_1-5">
+                            <input type="checkbox" id="travel_1-5" name="travel_count" value="1-5">1-5
+                        </label>
+                        <label for="travel_6-10">
+                            <input type="checkbox" id="travel_6-10" name="travel_count" value="6-10">6-10
+                        </label>
+                        <label for="travel_10">
+                            <input type="checkbox" id="travel_10" name="travel_count" value="10">>10
+                        </label>
+                    </fieldset>
+                    <fieldset class="input--countries_count">
+                        <legend>W ilu krajach byłeś?</legend>
+                            <label for="countries_0">
+                                <input type="checkbox" id="countries_0" name="countries_count" value="0">0
+                            </label>
+                            <label for="countries_1-5">
+                                <input type="checkbox" id="countries_1-5" name="countries_count" value="1-5">1-5
+                            </label>
+                            <label for="countries_6-10">
+                                <input type="checkbox" id="countries_6-10" name="countries_count" value="6-10">6-10
+                            </label>
+                            <label for="countries_10">
+                                <input type="checkbox" id="countries_10" name="countries_count" value="10">>10
+                            </label>
+                    </fieldset>
+                    <div class="input--first-travel">
+                        <label for="first_travel">Kiedy miała miejsce Twoja pierwsza podróż<br>
+                            <input type="date" name="first_travel" id="first_travel">
+                        </label>
+                    </div>
+                    <div class="input--text-field">
+                        <label for="text">Jaka była Twoja pierwsza/najciekawsza podróż<br>
+                            <textarea name="text" id="text" ></textarea>
+                        </label>
+                    </div>
+                    <div class="input--email">
+                        <label for="email">Zostańmy w kontakcie<br>
+                            <input type="email" name="email" id="email" placeholder="email@email.com">
+                        </label>
+                    </div>
+                    <button type="submit" class="btn--submit">Wyślij Formularz</button>
+                    <button type="reset" class="btn--reset">Resetuj Formularz</button>
+                </form>
+            </section>
+
+            <a href="#" class="go_up-wrapper">
+                <div class="arrow">
+                    <svg class="arrow-circle" width="" height="" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#D8DEE9"/>
+                    </svg>
+                    <svg class="arrow-down" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10L9.59428 0H8.40572L0 10L1.18857 11.414L8.15859 3.122V24H9.83973V3.12L16.8097 11.414L18 10Z" fill="#485265"/>
+                    </svg>
+                </div>
+            </a>
+        </main>
+
+        <div class="footer-wrapper footer-wrapper-dark">
+            <div class="footer-transition footer-transition--dark">
+                <img src="./public/assets/images/footer-transition-dark.svg" alt="">
+            </div>
+
+            <footer class="footer footer--dark">
+                <div class="footer__about">
+                    <h5 class="footer__heading">
+                        <span class="text--accent">Podróż,</span> moje hobby
+                    </h5>
+                    <p>Stronę wykonał, Bartosz Elert.</p>
+                    <p>Projekt WAI/HIH,<br>Informatyka 2020/2021</p>
+                </div>
+                <div class="footer__nav">
+                    <h5 class="footer__heading">Nawigacja</h5>
+                    <ul class="footer__nav-menu">
+                        <li class="footer__links"><a href="" class="footer__link">Home</a></li>
+                        <li class="footer__links"><a href="" class="footer__link">Zdjęcia</a></li>
+                        <li class="footer__links"><a href="" class="footer__link">Planer</a></li>
+                        <li class="footer__links"><a href="" class="footer__link">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer__featured">
+                    <h5 class="footer__heading">Polecane Strony</h5>
+                    <ul class="footer__featured-links">
+                        <li class="featured"><a class="featured__link">Airbnb</a></li>
+                        <li class="featured"><a class="featured__link">Booking.com</a></li>
+                        <li class="featured"><a class="featured__link">Spotted by Locals</a></li>
+                        <li class="featured"><a class="featured__link">Skiplagged</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h5 class="footer__heading">Informacje Kontaktowe</h5>
+                    <p>Email: elert.bartosz@gmail.com</p>
+                    <p>Telefon: 515-837-879</p>
+                </div>
+                <div class="footer__sm">
+                    <ul class="sm__icons">
+                        <li class="sm__icon"><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li class="sm__icon"><a href=""><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="sm__icon"><a href="#"><i class="fab fa-reddit fa-lg"></i></a></li>
+                        <li class="sm__icon"><a href=""><i class="fab fa-linkedin fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+@import "variables.scss";
+@import "components.scss";
+
+html,body {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  font-family: $roboto;
+  font-size: clamp(16px, 1.5vw, 22px);
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  @include reset;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  .landing__background {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+    min-height: $viewport-height-desktop;
+    background: center no-repeat url("../assets/images/Container.jpg");
+    background-size: cover;
+    .background--shade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(#000000, .35);
+    }
+  }
+}
+
+.nav-wrapper {
+  @include nav-wrapper($mg-48)
+}
+
+.nav__menu {
+  list-style-type: none;
+  @include flex-row;
+}
+
+.nav__name {
+  font-size: $font-ms;
+  color: $light-main;
+  .text--accent {
+    color: $color-orange;
+  }
+}
+
+.nav__link {
+  @include nav_link($mg-24);
+}
+
+.link {
+  @include link;
+}
+
+.landing-wrapper {
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  min-height: $viewport-height-desktop;
+  position: relative;
+}
+
+.landing-page {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: calc(2 * #{$mg-48}) 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr max-content max-content 1fr;
+  position: relative;
+  .text__wrapper {
+    width: 85%;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    margin-bottom: $mg-64;
+  }
+  .landing__heading {
+    margin-bottom: $mg-32;
+    @include landing__header($font-lg);
+    color: $light-main;
+    font-family: $roboto;
+    font-weight: 400;
+  }
+  .landing__subheading {
+    @include landing__header($font-xs);
+    font-family: $merriweather;
+    font-weight: 300;
+    color: $light-fade;
+  }
+  .button-wrapper {
+    @include flex-row;
+    @include button($mg-192, $mg-48, $font-ms, transparent);
+    font-weight: 300;
+    grid-row: 3/4;
+    grid: 1/2;
+    color: $light-main;
+  }
+  .text--accent {
+    color: $color-orange;
+  }
+  .arrow {
+    @include arrow-svg(2rem);
+    &:hover .arrow-circle > rect {
+      stroke: $color-orange;
+    }
+    &:hover .arrow-down > path {
+      fill: $color-orange
+    }
+  }
+}
+
+.main__content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  background-color: $light-main;
+  position: relative;
+  .transition {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    top: -2px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.main__content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.content__header-wrapper {
+  margin-top: $mg-64;
+  margin-bottom: calc(#{$mg-64} * 2);
+}
+
+.content__header {
+  @include flex-row;
+  @include title-bar($lg-bar, $mg-48, $font-ms, $light-main, $dark-main, $rounded-32);
+  box-shadow: $bar-shadow;
+  .content__heading {
+    font-weight: 500;
+    font-family: $roboto;
+  }
+}
+
+.go_up-wrapper {
+  position: absolute;
+  bottom: $mg-64;
+  left: calc(100% - 10%);
+  .arrow {
+    @include arrow-svg(2rem);
+    transition: .3s ease-in-out transform;
+    &-circle {
+      rect {
+        stroke: $color-orange;
+        fill: $color-orange;
+      }
+    }
+    &-down {
+      width: 40%;
+      height: 50%;
+      path {
+        fill: $light-main;
+      }
+    }
+  }
+  &:hover {
+    .arrow {
+      transform: scale(1.25);
+    }
+  }
+}
+
+.footer-wrapper {
+  width: 100%;
+  position: relative;
+  &--dark {
+    background-color: $light-main;
+  }
+  &--light {
+    background-color: $dark-main;
+  }
+}
+
+.footer-transition {
+  position: relative;
+  top: -25px;
+  width: 100%;
+  height: auto;
+  img {
+    overflow-x: hidden;
+    width: 110%;
+    height: auto;
+  }
+}
+
+.footer {
+  width: 90%;
+  height: auto;
+  margin: $mg-64 auto $mg-48 auto;
+  @include flex-row;
+  align-items: flex-start;
+  justify-content: space-between;
+  .footer__heading {
+    margin-bottom: $mg-16;
+    font-size: calc(#{$font-ms} + 1px);
+    transition: .3s ease-in-out color;
+  }
+  &--light {
+    color: $light-main;
+    .text--accent {
+      font-size: calc(#{$font-ms} + 1px);
+      color: $color-main-accent;
+    }
+    .footer__link, .featured__link {
+      color: $light-main;
+    }
+  }
+  &--dark {
+    color: $dark-main;
+    .text--accent {
+      font-size: calc(#{$font-ms} + 1px);
+      color: $color-main-accent;
+    }
+    .footer__link, .featured__link {
+      color: $dark-main;
+    }
+  }
+  p {
+    font-size: calc(#{$font-xs} - 4px);
+    margin-bottom: calc(#{$mg-16});
+    font-weight: 400;
+    font-family: $open-sans;
+  }
+}
+
+.footer__nav, .footer__about, .footer__featured, .footer__contact {
+  &:hover {
+    .footer__heading {
+      color: $color-main-accent;
+    }
+  }
+}
+
+.footer__about  {
+  .footer__heading {
+    font-size: $font-xs;
+  }
+}
+
+.footer__nav, .footer__featured, .footer__sm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  .footer__nav-menu, .footer__featured-links, .sm__icons {
+    list-style-type: none;
+    text-decoration: none;
+  }
+  .footer__links, .featured {
+    margin-bottom: $mg-16;
+  }
+  .footer__link, .featured__link {
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: calc(#{$font-xs} - 4px);
+    border-bottom: 1px solid transparent;
+    transition: .3s ease-in-out border;
+  }
+  .footer__link:hover, .featured__link:hover {
+    border-bottom: 1px solid $color-main-accent;
+  }
+}
+
+.footer--dark {
+  .sm__icon {
+    margin-bottom: $mg-24;
+    i {
+      color: $dark-main;
+      transition: .3s ease-in-out color, .3s ease-in-out transform;
+    }
+    i:hover {
+      color: $color-main-accent;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.footer--light {
+  .sm__icon {
+    margin-bottom: $mg-24;
+    i {
+      color: $light-main;
+      transition: .3s ease-in-out color, .3s ease-in-out transform;
+    }
+    i:hover {
+      color: $color-main-accent;
+      transform: scale(1.05);
+    }
+  }
+}

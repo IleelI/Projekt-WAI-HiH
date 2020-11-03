@@ -1,0 +1,249 @@
+@import "variables";
+@import "components";
+@import "main";
+
+
+.nav__name {
+  font-size: $font-ms;
+  color: $light-main;
+  .text--accent {
+    color: $color-orange;
+  }
+}
+
+.landing-page {
+  .text__wrapper {
+    width: 75%;
+  }
+  .button-wrapper {
+    @include button($md-bar, $mg-48, $font-ms, transparent);
+  }
+}
+
+.intro__content-wrapper {
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color: $light-main;
+  .intro__decoration_right {
+    position: absolute;
+    width: $mg-64;
+    top: 15%;
+    right: 0;
+  }
+  .intro__decoration_left {
+    position: absolute;
+    width: $decor-width;
+    top: 60%;
+    left: 0;
+  }
+  .intro__content {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    .arrow {
+      @include arrow-svg(2rem);
+      .arrow-circle rect {
+          stroke: $dark-main;
+      }
+      .arrow-down path {
+        fill: $dark-main;
+      }
+      &:hover .arrow-circle > rect {
+        stroke: $color-orange;
+      }
+      &:hover .arrow-down > path {
+        fill: $color-orange
+      }
+    }
+  }
+  .content__intro-wrapper {
+    max-width: 768px;
+    min-width: 256px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+}
+
+.intro__heading {
+  font-weight: 500;
+  font-size: $font-md;
+  text-align: center;
+  color: $dark-accent;
+  margin-bottom: $mg-48;
+}
+
+.intro__spacer {
+  width: 50%;
+  height: 3px;
+  background-color: $dark-accent;
+  margin: 0 auto $mg-64 auto;
+}
+
+.intro__text {
+  font-size: $font-xs;
+  color: $dark-accent;
+  margin-bottom: $mg-48;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.intro__table {
+  margin-top: $mg-24;
+  max-width: 768px;
+  min-width: 256px;
+  width: 60%;
+  margin-bottom: calc(#{$mg-64} * 2);
+  .table-content {
+    width: 100%;
+  }
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  th {
+    border-bottom: 1px solid $dark-fade;
+    border-top: 1px solid $dark-fade;
+    padding: .5rem 1rem;
+    text-align: center;
+    transition: .4s ease-in-out color, .4s ease-in-out background-color;
+  }
+  td {
+    text-align: center;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid $dark-fade;
+    border-top: 1px solid $dark-fade;
+    transition: .4s ease-in-out color, .4s ease-in-out background-color;
+  }
+  tr:hover {
+    td, th {
+      color: $color-main-accent;
+      background-color: $light-accent;
+    }
+  }
+}
+
+.gallery__transition {
+  z-index: 1;
+  position: relative;
+  top: -25px;
+  width: 100%;
+  height: auto;
+  img {
+    position: relative;
+    left: -8px;
+    width: 101%;
+    height: auto;
+  }
+}
+
+.main__content-wrapper {
+  width: 100%;
+  height: auto;
+  background-color: $dark-accent;
+}
+
+.main__content {
+  width: 90%;
+  margin: $mg-32 auto 0 auto;
+  .gallery__heading-wrapper {
+    margin-bottom: $mg-48;
+  }
+  .gallery__heading {
+    font-size: $font-md;
+    font-weight: 500;
+    color: $light-accent;
+    font-family: $open-sans;
+  }
+  .gallery__main-wrapper {
+    width: 75%;
+    min-width: 256px;
+    margin-bottom: calc(#{$mg-64});
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(256px,1fr));
+    grid-auto-rows: calc(256px + 1.5vw);
+    grid-auto-flow: dense;
+    .gallery__img {
+      border-radius: 8px;
+      border: 1px solid $dark-accent;
+      box-shadow: 4px 4px 4px #252A34, -4px -4px 8px #252A34;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    };
+    .image__landscape {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+    .image__square {
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+    .image__vertical {
+      grid-row: span 1;
+      grid-column: span 2;
+    }
+    .image__square--xl {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+  }
+}
+
+.main__content {
+  .button-wrapper {
+    @include flex-row;
+    @include button($sm-bar, calc(#{$mg-24} * 1.5), $font-ms, transparent);
+    background-color: $light-main;
+    border: 1px solid $light-main;
+    box-shadow: -4px -3px 8px rgba(94, 97, 103, 0.25), 4px 4px 8px rgba(0, 0, 0, 0.35);
+    margin-bottom: $mg-32;
+    font-weight: 500;
+    grid-row: 3/4;
+    grid: 1/2;
+    color: $dark-main;
+    &:hover {
+      border: 1px solid $color-yellow;
+      background-color: $color-yellow;
+      a {
+        color: $light-main;
+      }
+    }
+    a {
+      color: $dark-main;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main__content {
+    .gallery__main-wrapper {
+      grid-template-columns: 1fr;
+      .image__landscape {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+      .image__square {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+      .image__vertical {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+      .image__square--xl {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+    }
+  }
+}
