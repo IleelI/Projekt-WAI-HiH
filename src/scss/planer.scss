@@ -3,6 +3,12 @@
 @import "main";
 @import "index";
 
+.page-wrapper {
+  .landing__background {
+    background-image: url("../assets/images/ld-planer.jpg");
+  }
+}
+
 .main__content-wrapper {
   width: 100%;
   height: auto;
@@ -78,7 +84,7 @@
   }
 }
 
-.todo-wrapper {
+.todo-wrapper, .form__content {
   width: 100%;
   max-width: 768px;
   margin: 0 auto $mg-64 auto;
@@ -87,6 +93,9 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+.todo-wrapper {
   .todo__container {
     max-width: 768px;
     width: 100%;
@@ -176,7 +185,7 @@
   justify-content: space-between;
   p {
     font-family: $open-sans;
-    font-weight: 300;
+    font-weight: 500;
     font-size: $font-xs;
   }
   .icons  i {
@@ -201,4 +210,217 @@
   opacity: 0;
 }
 
+.form-wrapper {
+  width: 100%;
+  height: auto;
+  background-color: $dark-accent;
+  .form__transition {
+    position: relative;
+    top: -25px;
+    width: 100%;
+    height: auto;
+    img {
+      width: inherit;
+      height: auto;
+    }
+  }
+}
+
+.form__content {
+  max-width: 576px;
+  .form__header {
+    margin-top: $mg-32;
+    margin-bottom: $mg-64;
+    font-size: $font-md;
+    color: $light-main;
+    transition: .6s cubic-bezier(0.2, 0.84, 0.44, 1) color;
+    &:hover {
+      color: $color-main-accent;
+    }
+  }
+  .form {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.form {
+  $form-heading: calc(#{$font-ms} - 2px);
+  $form-input: calc(#{$font-xs} + 2px);
+  div, fieldset {
+    label, legend {
+      font-size: $form-heading;
+      margin-bottom: $mg-16;
+      color: $light-main;
+      transition: .5s cubic-bezier(0.2, 0.84, 0.44, 1) color;
+    }
+  }
+  .input__sex, .input__travel_count, .input__countries_count {
+    border: none;
+  }
+  .input__name {
+    margin-bottom: $mg-32;
+    input[type=text] {
+      width: 100%;
+      height: $font-md;
+      margin-top: $mg-16;
+      background-color: $dark-main;
+      border: 1px solid $dark-main;
+      border-radius: $rounded-48;
+      font-size: $form-input;
+      color: $light-fade;
+      padding: 4px 1rem;
+      transition: .3s ease-in-out color;
+      &:focus {
+        color: $color-main-accent;
+      }
+    }
+    &:hover {
+      label {
+        color: $color-main-accent;
+      }
+      input {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .input__sex {
+    margin-bottom: $mg-32;
+    label {
+      font-size: $form-input;
+    }
+    label:first-of-type {
+      margin-right: $mg-16;
+    }
+    input {
+      margin-right: $mg-16;
+      font-size: $form-input;
+      transition: .3s ease-in-out color;
+    }
+    &:hover {
+      legend {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .input__travel_count, .input__countries_count {
+    margin-bottom: $mg-32;
+    legend {
+      grid-column: 1/5;
+    }
+    label {
+      margin-right: $mg-16;
+      margin-bottom: 0;
+      font-size: $form-input;
+      input {
+        margin-right: $mg-16;
+      }
+    }
+    &:hover {
+      legend {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .input__first-travel {
+    input {
+      margin-top: $mg-16;
+    }
+    label {
+      margin: 0;
+    }
+    width: 100%;
+    margin-bottom: $mg-32;
+    &:hover {
+      label {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .input__text-field {
+    margin-bottom: $mg-32;
+    label {
+      width: 100%;
+      margin: 0;
+    }
+    textarea {
+      margin-top: $mg-24;
+      width: 100%;
+      max-height: 384px;
+      min-height: 192px;
+      background-color: $dark-main;
+      border: none;
+      border-radius: $rounded-32;
+      padding: $mg-16 $rounded-32;
+      font-size: $font-xs;
+      color: $light-fade;
+    resize: vertical;
+    }
+    &:hover {
+      label {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .input__email {
+    margin-bottom: $mg-32;
+    input {
+      width: 100%;
+      height: $font-md;
+      margin-top: $mg-16;
+      padding: .5rem 1rem;
+      border: none;
+      background-color: $dark-main;
+      border-radius: $rounded-32;
+      font-size: $form-input;
+      color: $light-fade;
+      transition: .3s ease-in-out color;
+    }
+    input:focus {
+      color: $color-main-accent;
+    }
+    &:hover {
+      label {
+        color: $color-main-accent;
+      }
+    }
+  }
+  .buttons {
+    @include flex-row;
+    justify-content: space-around;
+  }
+  .btn__submit, .btn__reset {
+    border-radius: $rounded-48;
+    font-size: calc(#{$font-ms} - .5rem);
+    width: 40%;
+    min-width: 192px;
+    max-width: 256px;
+    height: 48px;
+    cursor: pointer;
+    transition: .4s cubic-bezier(0.2, 0.84, 0.44, 1) all;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.35), -4px -4px 8px rgba(72, 82, 101, 0.2);
+  }
+  .btn__submit {
+    border: 1px solid $light-main;
+    background-color: $light-main;
+    color: #000000;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $color-green;
+      border-color: $color-green;
+      color: #ffffff;
+    }
+  }
+  .btn__reset {
+    border: 1px solid $dark-accent;
+    background-color: $dark-accent;
+    color: $light-fade;
+    &:hover {
+      transform: scale(.95);
+      background-color: $color-red;
+      border-color: $color-red;
+      color: #ffffff;
+    }
+  }
+}
 
