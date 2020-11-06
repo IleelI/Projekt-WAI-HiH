@@ -3,7 +3,9 @@ import '../scss/index.scss';
 import landing_background1 from "../assets/images/Container.jpg";
 
 import transition from "../assets/svg/Transition.svg";
+import contact_transition from "../assets/svg/contact-transition.svg";
 import transition_gallery from "../assets/svg/transition-gallery.svg";
+import transition_form from "../assets/svg/transition-form.svg";
 import footer_transition from "../assets/svg/footer-transition.svg";
 import footer_transition_dark from "../assets/svg/footer-transition-dark.svg";
 
@@ -12,6 +14,7 @@ import second_post from "../assets/images/second_post.jpg";
 import third_post from "../assets/images/third_post.jpg";
 import planer_post1 from "../assets/images/planer-intro1.jpg";
 import planner_post2 from "../assets/images/planer-intro2.jpg";
+import contact_illustration from "../assets/images/contact-illustration.jpg";
 
 import img1 from "../assets/images/img1.jpg";
 import img2 from "../assets/images/img2.jpg";

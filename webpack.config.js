@@ -11,6 +11,7 @@ module.exports = (env) => {
             index: path.resolve(__dirname, 'src', 'js', 'index.js'),
             gallery: path.resolve(__dirname, 'src', 'js', 'gallery.js'),
             planer: path.resolve(__dirname, 'src', 'js', 'planer.js'),
+            contact: path.resolve(__dirname, 'src', 'js', 'contact.js'),
         },
         output: {
             path: path.resolve(__dirname, 'public'), // __dirname resolves the "/" root of the whole project
@@ -56,7 +57,7 @@ module.exports = (env) => {
                 filename: "../contact.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","contact.html"),
-                chunks: [ "index" ]
+                chunks: [ "contact" ]
             })
         ],
         module: {

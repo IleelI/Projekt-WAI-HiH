@@ -178,44 +178,44 @@
                 <div class="todo__decoration3"></div>
             </section>
 
-            <div class="form__transition"></div>
-
             <section class="form-wrapper">
-                <div class="form__header">
-                    <h4 class="form__heading">Podróżnicza Ankieta</h4>
-                </div>
-                <form class="form" action="form.php" method="get">
-                    <div class="input--name">
-                        <label for="name"> Twoje Imię: <br>
-                            <input type="text" name="name" id="name" value="">
-                        </label>
+                <div class="form__transition"><img src="./public/assets/images/transition-form.svg" alt=""></div>
+                <div class="form__content">
+                    <div class="form__header">
+                        <h4 class="form__heading">Podróżnicza Ankieta</h4>
                     </div>
-                    <fieldset class="input--sex">
-                        <legend>Płeć</legend>
-                        <label for="female">
-                            <input type="radio" id="female" name="sex" value="female">Kobieta
-                        </label>
-                        <label for="male">
-                            <input type="radio" id="male" name="sex" value="male">Mężczyzna
-                        </label>
-                    </fieldset>
-                    <fieldset class="input--travel_count">
-                        <legend>Ile podróży masz za sobą?</legend>
-                        <label for="travel_0">
-                            <input type="checkbox" id="travel_0" name="travel_count" value="0">0
-                        </label>
-                        <label for="travel_1-5">
-                            <input type="checkbox" id="travel_1-5" name="travel_count" value="1-5">1-5
-                        </label>
-                        <label for="travel_6-10">
-                            <input type="checkbox" id="travel_6-10" name="travel_count" value="6-10">6-10
-                        </label>
-                        <label for="travel_10">
-                            <input type="checkbox" id="travel_10" name="travel_count" value="10">>10
-                        </label>
-                    </fieldset>
-                    <fieldset class="input--countries_count">
-                        <legend>W ilu krajach byłeś?</legend>
+                    <form class="form" action="form.php" method="POST">
+                        <div class="input__name">
+                            <label for="name"> Twoje Imię: <br>
+                                <input type="text" name="name" id="name" value="">
+                            </label>
+                        </div>
+                        <fieldset class="input__sex">
+                            <legend>Płeć</legend>
+                            <label class="radio" for="female">
+                                <input type="radio" id="female" name="sex" value="female">Kobieta
+                            </label>
+                            <label class="radio" for="male">
+                                    <input type="radio" id="male" name="sex" value="male">Mężczyzna
+                            </label>
+                        </fieldset>
+                        <fieldset class="input__travel_count">
+                            <legend>Ile podróży masz za sobą?</legend>
+                            <label for="travel_0">
+                                <input type="checkbox" id="travel_0" name="travel_count" value="0">0
+                            </label>
+                            <label for="travel_1-5">
+                                <input type="checkbox" id="travel_1-5" name="travel_count" value="1-5">1-5
+                            </label>
+                            <label for="travel_6-10">
+                                <input type="checkbox" id="travel_6-10" name="travel_count" value="6-10">6-10
+                            </label>
+                            <label for="travel_10">
+                                <input type="checkbox" id="travel_10" name="travel_count" value="10">>10
+                            </label>
+                        </fieldset>
+                        <fieldset class="input__countries_count">
+                            <legend>W ilu krajach byłeś?</legend>
                             <label for="countries_0">
                                 <input type="checkbox" id="countries_0" name="countries_count" value="0">0
                             </label>
@@ -228,25 +228,28 @@
                             <label for="countries_10">
                                 <input type="checkbox" id="countries_10" name="countries_count" value="10">>10
                             </label>
-                    </fieldset>
-                    <div class="input--first-travel">
-                        <label for="first_travel">Kiedy miała miejsce Twoja pierwsza podróż<br>
-                            <input type="date" name="first_travel" id="first_travel">
-                        </label>
-                    </div>
-                    <div class="input--text-field">
-                        <label for="text">Jaka była Twoja pierwsza/najciekawsza podróż<br>
-                            <textarea name="text" id="text" ></textarea>
-                        </label>
-                    </div>
-                    <div class="input--email">
-                        <label for="email">Zostańmy w kontakcie<br>
-                            <input type="email" name="email" id="email" placeholder="email@email.com">
-                        </label>
-                    </div>
-                    <button type="submit" class="btn--submit">Wyślij Formularz</button>
-                    <button type="reset" class="btn--reset">Resetuj Formularz</button>
-                </form>
+                        </fieldset>
+                        <div class="input__first-travel">
+                            <label for="first_travel">Kiedy miała miejsce Twoja pierwsza podróż<br>
+                                <input type="date" name="first_travel" id="first_travel">
+                            </label>
+                        </div>
+                        <div class="input__text-field">
+                            <label for="text">Jaka była Twoja pierwsza/najciekawsza podróż?<br>
+                                <textarea name="text" id="text" ></textarea>
+                            </label>
+                        </div>
+                        <div class="input__email">
+                            <label for="email">Zostańmy w kontakcie<br>
+                                <input type="email" name="email" id="email" placeholder="email@email.com">
+                            </label>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn__submit">Wyślij Formularz</button>
+                            <button type="reset" class="btn__reset">Resetuj Formularz</button>
+                        </div>
+                    </form>
+                </div>
             </section>
 
             <a href="#" class="go_up-wrapper">
