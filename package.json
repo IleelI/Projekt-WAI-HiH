@@ -4,7 +4,9 @@
   "description": "",
   "main": "main.js",
   "browserslist": [
-    "defaults"
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
   ],
   "scripts": {
     "sync": "browser-sync start --server --watch './public'",

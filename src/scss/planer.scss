@@ -6,6 +6,15 @@
 .page-wrapper {
   .landing__background {
     background-image: url("../assets/images/ld-planer.jpg");
+    .background--shade {
+      background-color: rgba(#000000, .65);
+    }
+  }
+}
+
+.link {
+  &:hover {
+    color: $color-orange;
   }
 }
 
@@ -260,7 +269,7 @@
   }
   .input__name {
     margin-bottom: $mg-32;
-    input[type=text] {
+    #name {
       width: 100%;
       height: $font-md;
       margin-top: $mg-16;
@@ -424,3 +433,110 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .landing-page {
+    grid-template-columns: 1fr;
+    .text__wrapper {
+      width: 75%;
+    }
+    .landing__heading {
+      max-width: 512px;
+      font-size: calc(#{$font-lg} + 4px);
+    }
+    .landing__subheading {
+      max-width: 384px;
+      font-size: calc(#{$font-sm} + 2px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+  .intro__section-wrapper {
+    width: 85%;
+    .post__text-wrapper {
+      margin: $mg-32 auto;
+      width: 75%;
+      text-align: center;
+    }
+  }
+  .content__post {
+    min-width: 0;
+  }
+  .post__heading {
+    font-size: $font-lg;
+  }
+  .post__subheading {
+    font-size: calc(#{$font-xs} + 4px);
+  }
+  .todo-wrapper {
+    width: 75%;
+    max-width: 512px;
+  }
+  .form-wrapper {
+    .form__content {
+      width: 75%;
+      max-width: 512px;
+    }
+  }
+  .go_up-wrapper {
+    left: 0;
+    right: -90%;
+    bottom: 2.5rem;
+  }
+  .footer-transition {
+    width: 125%;
+    left: -12.5%;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .landing-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr max-content 1.5fr;
+    .text__wrapper {
+      width: 95%;
+    }
+  }
+  .intro__section-wrapper {
+    .post__text-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+    .post__img-wrapper {
+      min-width: 0;
+    }
+    .arrow {
+      bottom: 0;
+    }
+  }
+  .post__heading {
+    font-size: $font-md;
+  }
+  .post__subheading {
+    font-size: $font-xs;
+  }
+  .todo-wrapper {
+    display: none;
+  }
+  .form {
+    .input__travel_count, .input__countries_count {
+      margin-bottom: $mg-32;
+
+      label {
+        margin-right: $mg-16;
+        margin-bottom: $mg-16;
+
+        input {
+          margin-right: $mg-16;
+        }
+      }
+    }
+  }
+  .buttons {
+    flex-flow: column nowrap;
+  }
+  .btn__submit {
+    margin: 0;
+    margin-bottom: $mg-24;
+  }
+}

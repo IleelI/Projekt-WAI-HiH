@@ -15,7 +15,7 @@ module.exports = (env) => {
         },
         output: {
             path: path.resolve(__dirname, 'public'), // __dirname resolves the "/" root of the whole project
-            filename: devMode ? 'js/[name].js' : 'js/[hash].[id].js', // It's equal to /public/js/[name].js path.
+            filename: devMode ? 'js/[name].js' : 'js/[name].[id].js', // It's equal to /public/js/[name].js path.
         },
         plugins: [
             new CleanWebpackPlugin({
@@ -23,8 +23,9 @@ module.exports = (env) => {
             }),
             new miniCssExtractPlugin({
                 // We operate on webpack output.path directory which is "/public" in our case
-                filename: devMode ? 'css/[name].css'
-                    : 'css/[hash].[id].css',
+/*                filename: devMode ? 'css/[name].css'
+                    : 'css/[hash].[id].css',*/
+                filename: 'css/[name].css',
                 chunkFilename: "css/[hash].css",
             }),
             new htmlWebpackPlugin({
@@ -33,7 +34,8 @@ module.exports = (env) => {
                 filename: "../index.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","index.html"),
-                chunks: [ "index" ]
+                chunks: [ "index" ],
+                minify: false,
             }),
             new htmlWebpackPlugin({
                 title: "Galeria Zdjęć",
@@ -41,7 +43,8 @@ module.exports = (env) => {
                 filename: "../gallery.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","gallery.html"),
-                chunks: [ "gallery" ]
+                chunks: [ "gallery" ],
+                minify: false,
             }),
             new htmlWebpackPlugin({
                 title: "Planer",
@@ -49,7 +52,8 @@ module.exports = (env) => {
                 filename: "../planer.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","planer.html"),
-                chunks: [ "planer" ]
+                chunks: [ "planer" ],
+                minify: false,
             }),
             new htmlWebpackPlugin({
                 title: "Kontakt",
@@ -57,7 +61,8 @@ module.exports = (env) => {
                 filename: "../contact.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","contact.html"),
-                chunks: [ "contact" ]
+                chunks: [ "contact" ],
+                minify: false,
             })
         ],
         module: {
@@ -69,7 +74,14 @@ module.exports = (env) => {
                         miniCssExtractPlugin.loader,
                         'css-loader',
                         'postcss-loader',
-                        'sass-loader'
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sassOptions: {
+                                    outputStyle: 'expanded'
+                                }
+                            }
+                        }
                     ]
                 },
                 {

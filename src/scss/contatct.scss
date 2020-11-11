@@ -54,4 +54,35 @@
       height: 100%;
     }
   }
+  .arrow {
+    &-circle rect {
+      stroke: $dark-main;
+    }
+    &-down path {
+      fill: $dark-main;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .landing-page {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $mg-24;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .landing-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr max-content 1fr max-content 1fr;
+    .contact__illustration {
+      grid-column: 1/2;
+      grid-row:3/4;
+    }
+    .text__wrapper {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    padding-bottom: $mg-64;
+  }
 }

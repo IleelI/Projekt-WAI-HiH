@@ -14,6 +14,9 @@
 .page-wrapper {
   .landing__background {
     background-image: url("../assets/images/ld-gallery.jpg");
+    .background--shade {
+      background-color: rgba(#000000,.65);
+    }
   }
 }
 
@@ -214,14 +217,12 @@
     box-shadow: -4px -3px 8px rgba(94, 97, 103, 0.25), 4px 4px 8px rgba(0, 0, 0, 0.35);
     margin-bottom: $mg-32;
     font-weight: 500;
-    grid-row: 3/4;
-    grid: 1/2;
     color: $dark-main;
     &:hover {
       border: 1px solid $color-yellow;
       background-color: $color-yellow;
       a {
-        color: $light-main;
+        color: #ffffff;
       }
     }
     a {
@@ -230,10 +231,40 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
+  .landing-page {
+    grid-template-columns: 1fr;
+    .text__wrapper {
+      width: 75%;
+    }
+    .landing__heading {
+      font-size: calc(#{$font-lg} + 4px);
+    }
+    .landing__subheading {
+      max-width: 384px;
+      font-size: calc(#{$font-sm} + 2px);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+  .content__intro-wrapper {
+    width: 55%;
+    .intro__text {
+      font-size: calc(#{$font-sm} + 2px);
+    }
+  }
+  .intro__table {
+    width: 60%;
+  }
+  .gallery__transition {
+    width: 125%;
+    left: -12.5%;
+  }
+
   .main__content {
     .gallery__main-wrapper {
       grid-template-columns: 1fr;
+      grid-auto-rows: max-content;
       .image__landscape {
         grid-row: span 1;
         grid-column: span 1;
@@ -252,4 +283,53 @@
       }
     }
   }
+  .footer-transition {
+    width: 125%;
+    left: -12.5%;
+  }
+  .main__content {
+    .button-wrapper {
+      margin-top: $mg-32;
+      margin-bottom: $mg-64;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .landing-page {
+    .button-wrapper {
+      width: 85%;
+    }
+  }
+  .intro__content-wrapper {
+    .intro__decoration_left {
+      top: 80%;
+    }
+    .intro__decoration_right {
+      right: -32px;
+    }
+    .content__intro-wrapper {
+      width: 75%;
+      min-width: 128px;
+    }
+  }
+  .table-content {
+    display: none;
+  }
+  .gallery__transition {
+    width: 150%;
+    left: -25%;
+    top: -5px;
+  }
+  .go_up-wrapper {
+    left: 0;
+    right: -90%;
+    bottom: 5em;
+  }
+  .footer-transition {
+    width: 150%;
+    left: -25%;
+    top: 0;
+  }
+
 }
