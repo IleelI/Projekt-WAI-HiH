@@ -8,7 +8,8 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a84623f942.js" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -21,9 +22,9 @@
         <div class="mobile__nav-wrapper">
             <div class="mobile__nav">
                 <ul class="mobile__nav_list">
-                    <li class="mobile__link"><a href="index.html" class="link link--active">Home</a></li>
+                    <li class="mobile__link"><a href="index.html" class="link">Home</a></li>
                     <li class="mobile__link"><a href="gallery.html" class="link">Zdjęcia</a></li>
-                    <li class="mobile__link"><a href="planer.html" class="link">Planer</a></li>
+                    <li class="mobile__link"><a href="planer.html" class="link link--active">Planer</a></li>
                     <li class="mobile__link"><a href="contact.html" class="link">Kontakt</a></li>
                 </ul>
             </div>
@@ -56,7 +57,7 @@
                         </h2>
                 </div>
                 <div class="button-wrapper">
-                    <a class="btn btn--landing" href="#" >Zaplanuj Teraz</a>
+                    <a class="btn btn--landing" href="#planer--todo" >Zaplanuj Teraz</a>
                 </div>
                 <div class="arrow">
                     <svg class="arrow-circle" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,66 +125,17 @@
 
             </div>
 
-            <section class="todo-wrapper">
+            <section id="planer--todo" class="todo-wrapper">
                 <div class="todo__container">
                     <div class="todo__app">
                         <div class="todo__header">
                             <h4 class="todo__heading">Zaplanuj Swoją Podróż</h4>
                         </div>
-                        <div class="todo__input-container">
+                        <div title="Enter Todo" class="todo__input-container">
                             <input class="todo__input" type="text" name="todo" placeholder="Dodaj i planuj!">
                             <span class="add__todo"><i class="fa fa-plus fa-md"></i></span>
                         </div>
                         <ul class="todo__list">
-                            <li class="todo">
-                                <p class="todo__text">Zrobić Projekt</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">Wytrzymać na WAI</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">Dupsnąć Piwerka</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">Obejrzeć LS'a</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">Ogarnąć dupę</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">asdasdasd</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
-                            <li class="todo">
-                                <p class="todo__text">asdasdasd</p>
-                                <div class="icons">
-                                    <i class="finish__todo fa fa-check fa-sm"></i>
-                                    <i class="remove__todo fa fa-trash fa-sm"></i>
-                                </div>
-                            </li>
                             <li class="overflow-spacer">Koniec Planowania.</li>
                         </ul>
                     </div>
@@ -203,17 +155,18 @@
                     <form class="form" action="form.php" method="POST">
                         <div class="input__name">
                             <label for="name"> Twoje Imię: <br>
-                                <input type="text" name="name" id="name" value="">
+                                <input class="input_text--name" type="text" name="name" id="name" value="">
                             </label>
                         </div>
-                        <fieldset class="input__sex">
+                        <fieldset title="Tylko dla celów statystycznych" class="input__sex">
                             <legend>Płeć</legend>
                             <label class="radio" for="female">
                                 <input type="radio" id="female" name="sex" value="female">Kobieta
                             </label>
                             <label class="radio" for="male">
-                                    <input type="radio" id="male" name="sex" value="male">Mężczyzna
+                                <input type="radio" id="male" name="sex" value="male">Mężczyzna
                             </label>
+                            <button type="button" title="Ukryj formularz" class="hide">Ukryj</button>
                         </fieldset>
                         <fieldset class="input__travel_count">
                             <legend>Ile podróży masz za sobą?</legend>
@@ -252,12 +205,12 @@
                         </div>
                         <div class="input__text-field">
                             <label for="text">Jaka była Twoja pierwsza/najciekawsza podróż?<br>
-                                <textarea name="text" id="text" ></textarea>
+                                <textarea class="input--textarea" name="text" id="text" ></textarea>
                             </label>
                         </div>
                         <div class="input__email">
                             <label for="email">Zostańmy w kontakcie<br>
-                                <input type="email" name="email" id="email" placeholder="email@email.com">
+                                <input class="input--email" type="email" name="email" id="email" placeholder="email@email.com">
                             </label>
                         </div>
                         <div class="buttons">

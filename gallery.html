@@ -8,7 +8,9 @@
     <title>Galeria Zdjęć</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a84623f942.js" crossorigin="anonymous"></script>
-    <link href="public/css/gallery.css" rel="stylesheet"><link href="public/css/gallery~42cdff99.css" rel="stylesheet"></head>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link href="public/css/gallery.css" rel="stylesheet"><link href="public/css/gallery.css" rel="stylesheet"></head>
 <body>
 <div class="page-wrapper">
     <div class="burger-wrapper">
@@ -20,8 +22,8 @@
     <div class="mobile__nav-wrapper">
         <div class="mobile__nav">
             <ul class="mobile__nav_list">
-                <li class="mobile__link"><a href="index.html" class="link link--active">Home</a></li>
-                <li class="mobile__link"><a href="gallery.html" class="link">Zdjęcia</a></li>
+                <li class="mobile__link"><a href="index.html" class="link">Home</a></li>
+                <li class="mobile__link"><a href="gallery.html" class="link link--active">Zdjęcia</a></li>
                 <li class="mobile__link"><a href="planer.html" class="link">Planer</a></li>
                 <li class="mobile__link"><a href="contact.html" class="link">Kontakt</a></li>
             </ul>
@@ -55,9 +57,9 @@
                     </h2>
             </div>
             <div class="button-wrapper">
-                <a class="btn" href="#" >Zobacz Fotografie</a>
+                <a class="btn" href="#gallery--images" >Zobacz Fotografie</a>
             </div>
-            <a class="arrow" href="">
+            <a class="arrow" href="#gallery--intro">
                 <svg class="arrow-circle" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#D8DEE9"/>
                 </svg>
@@ -68,7 +70,7 @@
         </div>
     </div>
 
-    <div class="intro__content-wrapper">
+    <div id="gallery--intro" class="intro__content-wrapper">
         <div class="intro__decoration_left"><img src="./public/assets/images/circle-decor.svg" alt=""></div>
         <div class="intro__decoration_right"><img src="./public/assets/images/zig-zag-decor.svg" alt=""></div>
         <div class="intro__content">
@@ -139,7 +141,7 @@
     </div>
 
     <main class="main__content-wrapper">
-        <div class="gallery__transition"><img src="./public/assets/images/transition-gallery.svg" alt=""></div>
+        <div id="gallery--images" class="gallery__transition"><img src="./public/assets/images/transition-gallery.svg" alt=""></div>
         <section class="main__content">
 
             <div class="gallery__heading-wrapper">
@@ -162,8 +164,16 @@
                 <div class="gallery_img image__square--xl"><img src="./public/assets/images/img5.jpg" class="gallery__img" alt="podróżna klisza"></div>
             </div>
 
+            <div class="gallery__heading-wrapper">
+                <h3 class="gallery__heading">Widok na dziś</h3>
+            </div>
+
+            <div class="daily__image--wrapper">
+                <img src="" alt="photo of the day">
+            </div>
+
             <div class="button-wrapper">
-                <a class="btn btn--gallery" href="#" >Zaplanuj Podróż</a>
+                <a class="btn btn--gallery" href="planer.html" >Zaplanuj Podróż</a>
             </div>
             <a href="#" class="go_up-wrapper">
                 <div class="arrow">
@@ -222,5 +232,5 @@
         </footer>
     </div>
 </div>
-<script src="public/js/gallery.js"></script><script src="public/js/gallery~fff69d18.263.js"></script><script src="public/js/gallery~42cdff99.733.js"></script></body>
+<script src="public/js/gallery.js"></script><script src="public/js/gallery~d91a9049.js"></script><script src="public/js/gallery~42cdff99.js"></script><script src="public/js/script.js"></script></body>
 </html>

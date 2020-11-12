@@ -12,10 +12,11 @@ module.exports = (env) => {
             gallery: path.resolve(__dirname, 'src', 'js', 'gallery.js'),
             planer: path.resolve(__dirname, 'src', 'js', 'planer.js'),
             contact: path.resolve(__dirname, 'src', 'js', 'contact.js'),
+            script: path.resolve(__dirname, 'src', 'js', 'script.js')
         },
         output: {
             path: path.resolve(__dirname, 'public'), // __dirname resolves the "/" root of the whole project
-            filename: devMode ? 'js/[name].js' : 'js/[name].[id].js', // It's equal to /public/js/[name].js path.
+            filename: devMode ? 'js/[name].js' : 'js/[name].js', // It's equal to /public/js/[name].js path.
         },
         plugins: [
             new CleanWebpackPlugin({
@@ -34,7 +35,7 @@ module.exports = (env) => {
                 filename: "../index.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","index.html"),
-                chunks: [ "index" ],
+                chunks: [ "index", "script"],
                 minify: false,
             }),
             new htmlWebpackPlugin({
@@ -43,7 +44,7 @@ module.exports = (env) => {
                 filename: "../gallery.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","gallery.html"),
-                chunks: [ "gallery" ],
+                chunks: [ "gallery", "script" ],
                 minify: false,
             }),
             new htmlWebpackPlugin({
@@ -52,7 +53,7 @@ module.exports = (env) => {
                 filename: "../planer.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","planer.html"),
-                chunks: [ "planer" ],
+                chunks: [ "planer", "script" ],
                 minify: false,
             }),
             new htmlWebpackPlugin({
@@ -61,7 +62,7 @@ module.exports = (env) => {
                 filename: "../contact.html",
                 // Template uses the path from the root of the project "/"
                 template: path.resolve("src","assets","html","contact.html"),
-                chunks: [ "contact" ],
+                chunks: [ "contact", "script" ],
                 minify: false,
             })
         ],

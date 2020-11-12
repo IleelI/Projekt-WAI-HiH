@@ -206,6 +206,21 @@
       grid-column: span 2;
     }
   }
+  .daily__image--wrapper {
+    width: 75%;
+    height: auto;
+    max-width: 512px;
+    min-width: 256px;
+    margin-bottom: calc(#{$mg-64});
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid $dark-accent;
+        box-shadow: 4px 4px 4px #252A34, -4px -4px 8px #252A34;
+      }
+  }
 }
 
 .main__content {
@@ -230,6 +245,12 @@
     }
   }
 }
+
+.footer-transition {
+  width: 125%;
+  left: -12.5%;
+}
+
 
 @media screen and (max-width: 992px) {
   .landing-page {
@@ -264,6 +285,7 @@
   .main__content {
     .gallery__main-wrapper {
       grid-template-columns: 1fr;
+      grid-gap: $mg-48 0;
       grid-auto-rows: max-content;
       .image__landscape {
         grid-row: span 1;

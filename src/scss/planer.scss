@@ -140,8 +140,10 @@
 }
 
 .todo__input-container {
-  @include flex-row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-content: center;
+  justify-content: center;
   input {
     height: 100%;
     border: none;
@@ -167,6 +169,7 @@
   cursor: pointer;
   color: $dark-main;
   transition: .4s ease-in-out color;
+  padding: .25rem .5rem;
   &:hover {
     color: $color-green;
   }
@@ -196,6 +199,10 @@
     font-family: $open-sans;
     font-weight: 500;
     font-size: $font-xs;
+  }
+  .todo__text--active {
+    color: $dark-fade;
+    text-decoration: line-through $dark-main;
   }
   .icons  i {
     color: $dark-main;
@@ -431,6 +438,17 @@
       color: #ffffff;
     }
   }
+}
+
+.hide {
+  height: 1.5rem;
+  margin-left: $mg-16;
+}
+
+.ui-tooltip {
+  width: 210px;
+  color: $light-main;
+  border-color: 1px solid rgba($light-main, .75);
 }
 
 @media screen and (max-width: 992px) {

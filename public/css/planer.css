@@ -525,14 +525,14 @@ html, body {
   .burger-wrapper {
     display: block;
     position: fixed;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     width: 2.5rem;
     height: 2.5rem;
     padding: .5rem;
     border-radius: 4rem;
     background-color: #2E3440;
-    z-index: 10;
+    z-index: 12;
     cursor: pointer;
     box-shadow: -4px -3px 8px rgba(94, 97, 103, 0.25), 4px 4px 8px rgba(0, 0, 0, 0.35);
   }
@@ -557,33 +557,43 @@ html, body {
     background-color: #ffffff;
     -ms-transform: translateY(-8px);
         transform: translateY(-8px);
-    transition: transform .3s ease-in-out;
+    transition: transform .35s ease-in-out, color .7s ease-in-out;
   }
   .burger-wrapper .burger-bar::after {
     -ms-transform: translateY(8px);
         transform: translateY(8px);
   }
-  .burger-wrapper .burger--active .burger-bar {
+  .burger--active {
+    background-color: #E5E9F0;
+  }
+  .burger--active .burger-bar {
+    background-color: #E5E9F0;
+    transition: background-color .7s ease-in-out;
+  }
+  .burger--active .burger-bar::before, .burger--active .burger-bar::after {
+    background-color: #000000;
+  }
+  .burger--active .burger-bar {
     background-color: transparent;
   }
-  .burger-wrapper .burger--active .burger-bar::after {
+  .burger--active .burger-bar::after {
     -ms-transform: rotate(45deg) translateY(0);
         transform: rotate(45deg) translateY(0);
   }
-  .burger-wrapper .burger--active .burger-bar::before {
+  .burger--active .burger-bar::before {
     -ms-transform: rotate(-45deg) translateY(0);
         transform: rotate(-45deg) translateY(0);
   }
   .blur {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background-color: transparent;
     z-index: -1;
-    transition: background-color .4s ease-in-out;
+    transition: background-color .7s ease-in-out;
   }
   .blur--active {
     background-color: rgba(0, 0, 0, 0.75);
@@ -598,6 +608,7 @@ html, body {
     background-color: #2E3440;
     -ms-transform: translateX(400px);
         transform: translateX(400px);
+    transition: transform .7s ease-in-out;
   }
   .mobile__nav-wrapper .mobile__nav {
     position: relative;
@@ -605,7 +616,7 @@ html, body {
     max-width: 200px;
     width: 45%;
     min-width: 150px;
-    padding: 2rem 1rem;
+    padding: 7rem 1rem;
     z-index: 10;
   }
   .mobile__nav-wrapper .mobile__nav_list {
@@ -615,10 +626,18 @@ html, body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .mobile__nav-wrapper .mobile__link {
     padding: 1rem;
+  }
+  .mobile__nav-wrapper .mobile__link .link {
+    color: #ECEFF4;
+  }
+  .mobile__nav-wrapper--active {
+    -ms-transform: translateX(0);
+        transform: translateX(0);
+    z-index: 9;
   }
   .landing-page {
     grid-template-columns: 2fr 1fr;
@@ -1125,11 +1144,11 @@ html, body {
 }
 
 .todo__input-container {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  align-content: center;
   justify-content: center;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 3rem;
   box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.85), 4px 4px 8px rgba(0, 0, 0, 0.4);
   border-radius: 2rem;
@@ -1157,6 +1176,7 @@ html, body {
   cursor: pointer;
   color: #2E3440;
   transition: .4s ease-in-out color;
+  padding: .25rem .5rem;
 }
 
 .add__todo:hover {
@@ -1192,6 +1212,12 @@ html, body {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.todo .todo__text--active {
+  color: #3B4252;
+  -webkit-text-decoration: line-through #2E3440;
+          text-decoration: line-through #2E3440;
 }
 
 .todo .icons i {
@@ -1452,6 +1478,17 @@ html, body {
   background-color: #BC6269;
   border-color: #BC6269;
   color: #ffffff;
+}
+
+.hide {
+  height: 1.5rem;
+  margin-left: 1rem;
+}
+
+.ui-tooltip {
+  width: 210px;
+  color: #ECEFF4;
+  border-color: 1px solid rgba(236, 239, 244, 0.75);
 }
 
 @media screen and (max-width: 992px) {

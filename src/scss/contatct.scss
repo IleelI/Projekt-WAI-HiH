@@ -16,13 +16,15 @@
   color: $dark-main;
 }
 
-.link {
-  color: $dark-main;
-  &::before {
-    border-color: $dark-accent;
-  }
-  &--active::before {
-    border-color: $color-orange;
+.landing-wrapper {
+  .link {
+    color: $dark-main;
+    &::before {
+      border-color: $dark-accent;
+    }
+    &--active::before {
+      border-color: $color-orange;
+    }
   }
 }
 
